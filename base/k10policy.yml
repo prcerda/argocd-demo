@@ -18,13 +18,13 @@ spec:
       backupParameters:
         filters: {}
         profile:
-          name: profile-wasabi-kasten-wasabi
+          name: profile-gcs-pcerda-demolab
           namespace: kasten-io
     - action: export
       exportParameters:
         frequency: "@hourly"
         profile:
-          name: profile-wasabi-kasten-wasabi
+          name: profile-gcs-pcerda-demolab
           namespace: kasten-io
         exportData:
           enabled: true
