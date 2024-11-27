@@ -1,0 +1,31 @@
+kind: Policy
+apiVersion: config.kio.kasten.io/v1alpha1
+metadata:
+  name: k10-stock-demo-policy
+  namespace: kasten-io
+spec:
+  frequency: "@hourly"
+  retention:
+    hourly: 4
+  selector:
+    matchExpressions:
+      - key: k10.kasten.io/appNamespace
+        operator: In
+        values:
+          - stock-demo
+  actions:
+    - action: backup
+      backupParameters:
+        filters: {}
+        profile:
+          name: profile-gcs-pcerda-demolab
+          namespace: kasten-io
+    - action: export
+      exportParameters:
+        frequency: "@hourly"
+        profile:
+          name: profile-gcs-pcerda-demolab
+          namespace: kasten-io
+        exportData:
+          enabled: true
+      retention: {}
