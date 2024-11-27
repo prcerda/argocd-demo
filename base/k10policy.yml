@@ -20,3 +20,15 @@ spec:
         profile:
           name: profile-wasabi-kasten-wasabi
           namespace: kasten-io
+    - action: export
+      exportParameters:
+        frequency: "@hourly"
+        profile:
+          name: profile-wasabi-kasten-wasabi
+          namespace: kasten-io
+        migrationToken:
+          name: k10-sockshop-policy-migration-token
+          namespace: kasten-io
+        exportData:
+          enabled: true
+      retention: {}
