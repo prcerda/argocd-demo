@@ -1,8 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: stock-demo
+  name: sockshop
   labels:
-    name: stock-demo
     purpose: production
-    dataprotection: gold  
+    dataprotection: gold
