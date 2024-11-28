@@ -27,7 +27,7 @@ spec:
           enabled: true
         frequency: '@daily'
         profile:
-          name: profile-azblob-pcerdak10sa
+          name: profile-gcs-pcerda-demolab
           namespace: kasten-io
       retention:
         daily: 2
