@@ -10,7 +10,7 @@ spec:
       - 1
     hours:
       - 14
-      - 6
+      - 11
     minutes:
       - 0
     months:
@@ -28,7 +28,7 @@ spec:
           name: profile-azblob-pcerdak10sa
           namespace: kasten-io
       retention:
-        daily: 7
+        daily: 2
   comment: policy-openshift-operators
   selector:
     matchExpressions:
