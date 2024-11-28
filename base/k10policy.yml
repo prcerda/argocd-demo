@@ -13,10 +13,6 @@ spec:
           - sockshop
   actions:
     - action: backup
-      backupParameters:
-        profile:
-          name: profile-azblob-pcerdak10sa
-          namespace: kasten-io
     - action: export
       exportParameters:
         frequency: "@hourly"
@@ -27,13 +23,3 @@ spec:
           enabled: true
       retention:
         hourly: 4
-        daily: 0
-        weekly: 0
-        monthly: 0
-        yearly: 0
-  retention:
-    hourly: 0
-    daily: 0
-    weekly: 0
-    monthly: 0
-    yearly: 0
