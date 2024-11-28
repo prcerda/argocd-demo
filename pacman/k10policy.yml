@@ -5,8 +5,6 @@ metadata:
   namespace: kasten-io
 spec:
   frequency: "@hourly"
-  retention:
-    hourly: 4
   selector:
     matchExpressions:
       - key: k10.kasten.io/appNamespace
@@ -16,16 +14,26 @@ spec:
   actions:
     - action: backup
       backupParameters:
-        filters: {}
         profile:
-          name: profile-gcs-pcerda-demolab
+          name: profile-azblob-pcerdak10sa
           namespace: kasten-io
     - action: export
       exportParameters:
         frequency: "@hourly"
         profile:
-          name: profile-gcs-pcerda-demolab
+          name: profile-azblob-pcerdak10sa
           namespace: kasten-io
         exportData:
           enabled: true
-      retention: {}
+      retention:
+        hourly: 4
+        daily: 0
+        weekly: 0
+        monthly: 0
+        yearly: 0
+  retention:
+    hourly: 0
+    daily: 0
+    weekly: 0
+    monthly: 0
+    yearly: 0
