@@ -1,0 +1,38 @@
+apiVersion: config.kio.kasten.io/v1alpha1
+kind: Policy
+metadata:
+  name: policy-openshift-operators
+  namespace: kasten-io
+spec:
+  frequency: '@daily'
+  subFrequency:
+    days:
+      - 1
+    hours:
+      - 14
+      - 6
+    minutes:
+      - 0
+    months:
+      - 1
+    weekdays:
+      - 0
+  actions:
+    - action: backup
+    - action: export
+      exportParameters:
+        exportData:
+          enabled: true
+        frequency: '@daily'
+        profile:
+          name: profile-azblob-pcerdak10sa
+          namespace: kasten-io
+      retention:
+        daily: 7
+  comment: policy-openshift-operators
+  selector:
+    matchExpressions:
+      - key: k10.kasten.io/appNamespace
+        operator: In
+        values:
+          - testsnapshot
