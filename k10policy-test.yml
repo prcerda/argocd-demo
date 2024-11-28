@@ -5,6 +5,8 @@ metadata:
   namespace: kasten-io
 spec:
   frequency: '@daily'
+  retention:
+    daily: 1  
   subFrequency:
     days:
       - 1

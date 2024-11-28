@@ -5,6 +5,8 @@ metadata:
   namespace: kasten-io
 spec:
   frequency: "@hourly"
+  retention:
+    hourly: 1  
   selector:
     matchExpressions:
       - key: k10.kasten.io/appNamespace
