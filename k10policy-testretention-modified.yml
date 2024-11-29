@@ -1,0 +1,25 @@
+kind: Policy
+apiVersion: config.kio.kasten.io/v1alpha1
+metadata:
+  name: k10-testsnapshotretention-policy
+  namespace: kasten-io
+spec:
+  frequency: "@hourly"
+  selector:
+    matchExpressions:
+      - key: k10.kasten.io/appNamespace
+        operator: In
+        values:
+          - testsnapshotretention-modified
+  actions:
+    - action: backup
+    - action: export
+      exportParameters:
+        frequency: "@hourly"
+        profile:
+          name: profile-gcs-pcerda-demolab
+          namespace: kasten-io
+        exportData:
+          enabled: true
+      retention:
+        hourly: 2
