@@ -6,7 +6,7 @@ metadata:
 spec:
   frequency: "@hourly"
   retention:
-    hourly: 1  
+    hourly: 0  
   selector:
     matchExpressions:
       - key: k10.kasten.io/appNamespace
